@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tasas">
+        <item name="tasa1">0.25</item>
+        <item name="tasa2">0.275</item>
+        <item name="tasa3">0.3</item>
+        <item name="tasa4">0.323</item>
+        <item name="tasa5">0.35</item>
+        <item name="tasa6">0.385</item>
+    </string-array>
+</resources>

@@ -1,0 +1,20 @@
+<resources>
+
+    <string name="app_name">Banco app</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="cuit_cuil">CUIT/CUIL</string>
+    <string name="us">US$</string>
+    <string name="ar">AR$</string>
+    <string name="moneda">Moneda</string>
+    <string name="dias">Dias</string>
+    <string name="dias_de_plazo">dias de plazo</string>
+    <string name="intereses">Intereses</string>
+    <string name="avisar_por_mail_antes_del_vencimiento">Avisar por mail antes del vencimiento  </string>
+    <string name="acreditar_en_cuenta">Acreditar en cuenta</string>
+    <string name="renovaci_n_autom_tica">Renovación automática</string>
+    <string name="togglebutton">ToggleButton</string>
+    <string name="aceptar_t_rminos_y_condiciones">Aceptar Términos y Condiciones</string>
+    <string name="hacer_plazo_fijo">Hacer plazo fijo</string>
+    <string name="monto">Monto</string>
+    <string name="informaci_n_de_control">Información de control</string>
+</resources>
