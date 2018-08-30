@@ -1,11 +1,11 @@
 package ar.edu.utn.frsf.isi.dam.bancolab01;
 
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.TextInputEditText;
-import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -33,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox chxTerminos;
     private Button btnHacerPlazoFijo;
     private TextView lblInformacionControl;
+    private TextView lblIntereses;
 
 
 
 
     //METODO ON CREATE
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,20 +59,52 @@ public class MainActivity extends AppCompatActivity {
         lblInformacionControl = (TextView) findViewById(R.id.lblInformacionControl);
         seekBar = (SeekBar) findViewById(R.id.seekBarDias);
         lblDiasDePlazo = (TextView) findViewById((R.id.lblDiasDePlazo));
+        lblIntereses = (TextView) findViewById(R.id.lblIntereses);
 
 
         pf = new PlazoFijo(getResources().getStringArray(R.array.tasas)); //SETEO DE LA INSTANCIA DE PLAZO FIJO
         btnHacerPlazoFijo.setEnabled(false);
         seekBar.setMax(170);//se fija en 170 y no 180 porque el minimo se controla desde el listener, ya que no quiero hacer dos main activities para diferentes apis
 
+        //LISTENER SOBRE EL CAMPO DE MONTO PARA QUE SE CONFIGURE EL MONTO EN LA INSTANCIA DE PLAZO FIJO CUANDO SE INGRESA O CAMBIA EL MONTO EN EL EDITTEXT
+        txtMonto.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length()!= 0) {
+                    pf.setMonto(Double.parseDouble(s.toString()));
+                    lblIntereses.setText("Intereses:  $" + Double.toString(pf.intereses()));
+
+                }
+                else{
+                    pf.setMonto(0.0);
+                    lblIntereses.setText("Intereses:  $" + Double.toString(pf.intereses()));
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         //COMPORTAMIENTO DEL SEEKBAR
 
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                //SETEO DEL LABEL DE DIAS EN PANTALLA
                 lblDiasDePlazo.setText(progress+10 + " dias de plazo");
+                //SETEO DE DIAS EN PLAZO FIJO
+                pf.setDias(progress+10);
+                //CALCULO DE INTERESES Y SETEO EN EL LBL
+                lblIntereses.setText("Intereses:  $" + Double.toString(pf.intereses()));
+
             }
 
             @Override

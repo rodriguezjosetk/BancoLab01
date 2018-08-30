@@ -21,13 +21,42 @@ public class PlazoFijo {
             Log.d("APP_01", Arrays.toString(tasas));
             this.tasas = tasas;
             this.monto = 0.0;
-            this.dias = 0;
+            this.dias = 10; //LO COLOCO EN 10 PORQUE ES EL MÍNIMO Y SI NO SE TOCA LA BARRA DE DIAS QUEDARÍA EN 0
             this.avisarVencimiento=false;
             this.renovarAutomaticamente=false;
             this.moneda = Moneda.PESO;
         }
 
     //GETTERS & SETTERS
+
+
+    public void setDias(Integer dias) {
+        this.dias = dias;
+    }
+
+    public void setMonto(Double monto) {
+        this.monto = monto;
+    }
+
+    public void setAvisarVencimiento(Boolean avisarVencimiento) {
+        this.avisarVencimiento = avisarVencimiento;
+    }
+
+    public void setRenovarAutomaticamente(Boolean renovarAutomaticamente) {
+        this.renovarAutomaticamente = renovarAutomaticamente;
+    }
+
+    public void setMoneda(Moneda moneda) {
+        this.moneda = moneda;
+    }
+
+    public void setTasas(String[] tasas) {
+        this.tasas = tasas;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
     public Integer getDias() {
         return dias;
@@ -58,8 +87,6 @@ public class PlazoFijo {
     }
 
     //METODO TO STRING
-
-
     @Override
     public String toString() {
         return "PlazoFijo{" +
@@ -77,6 +104,11 @@ public class PlazoFijo {
 
         private Double tasa(){
 
+//            System.out.println(dias);
+//            System.out.println(monto);
+
+
+
             if(dias < 30 && monto <= 5000) return Double.valueOf(tasas[0]);
             if(dias >= 30 && monto <= 5000) return Double.valueOf(tasas[1]);
             if(dias < 30 && monto > 5000 && monto <= 99999) return Double.valueOf(tasas[2]);
@@ -90,8 +122,10 @@ public class PlazoFijo {
     //MÉTODO PARA EL CÁLCULO DE LOS INTERESES DEL PLAZO FIJO
 
         public Double intereses(){
+            Double dias1 = Double.parseDouble(dias.toString());
+            Double potencia = Math.pow(1+ tasa()/100, dias1/360.0);
+            Double interes = monto * (potencia -1);
 
-            Double interes = monto * (Math.pow(1+ tasa()/100, dias /360) - 1.0);
 
             return interes;
         }
