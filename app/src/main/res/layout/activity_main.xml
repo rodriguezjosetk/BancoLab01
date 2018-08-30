@@ -23,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/correo_electr_nico"
+            android:inputType="textEmailAddress"
             android:textColorHint="#000" />
     </android.support.design.widget.TextInputLayout>
 
@@ -41,7 +42,8 @@
             android:id="@+id/lblCuit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/cuit_cuil" />
+            android:hint="@string/cuit_cuil"
+            android:inputType="number" />
     </android.support.design.widget.TextInputLayout>
 
     <TextView
@@ -95,7 +97,8 @@
             android:id="@+id/lblMonto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/monto" />
+            android:hint="@string/monto"
+            android:inputType="numberDecimal" />
     </android.support.design.widget.TextInputLayout>
 
     <SeekBar
@@ -127,7 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
-        android:text="0 dias de plazo"
+        android:text="@string/_0_dias_de_plazo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/seekBarDias" />
 
