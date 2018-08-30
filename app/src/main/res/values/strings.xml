@@ -17,5 +17,5 @@
     <string name="hacer_plazo_fijo">Hacer plazo fijo</string>
     <string name="monto">Monto</string>
     <string name="informaci_n_de_control">Información de control</string>
-    <string name="_0_dias_de_plazo">0 dias de plazo</string>
+    <string name="_10_dias_de_plazo">10 dias de plazo</string>
 </resources>
