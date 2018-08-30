@@ -8,7 +8,6 @@
     <string name="moneda">Moneda</string>
     <string name="dias">Dias</string>
     <string name="dias_de_plazo">dias de plazo</string>
-    <string name="intereses">Intereses</string>
     <string name="avisar_por_mail_antes_del_vencimiento">Avisar por mail antes del vencimiento  </string>
     <string name="acreditar_en_cuenta">Acreditar en cuenta</string>
     <string name="renovaci_n_autom_tica">Renovación automática</string>
@@ -18,5 +17,5 @@
     <string name="monto">Monto</string>
     <string name="informaci_n_de_control">Información de control</string>
     <string name="_10_dias_de_plazo">10 dias de plazo</string>
-    <string name="intereses_0_0">Intereses: $0.0</string>
+    <string name="interes">Intereses:  $0.0</string>
 </resources>

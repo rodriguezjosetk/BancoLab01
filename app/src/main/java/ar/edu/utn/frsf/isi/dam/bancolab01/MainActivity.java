@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         pf = new PlazoFijo(getResources().getStringArray(R.array.tasas)); //SETEO DE LA INSTANCIA DE PLAZO FIJO
         btnHacerPlazoFijo.setEnabled(false);
         seekBar.setMax(170);//se fija en 170 y no 180 porque el minimo se controla desde el listener, ya que no quiero hacer dos main activities para diferentes apis
+        rbPeso.setChecked(true);
 
         //LISTENER SOBRE EL CAMPO DE MONTO PARA QUE SE CONFIGURE EL MONTO EN LA INSTANCIA DE PLAZO FIJO CUANDO SE INGRESA O CAMBIA EL MONTO EN EL EDITTEXT
         txtMonto.addTextChangedListener(new TextWatcher() {

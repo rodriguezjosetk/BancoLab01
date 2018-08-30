@@ -78,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="false"
             android:text="@string/ar" />
 
     </RadioGroup>
@@ -139,7 +140,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="388dp"
-        android:text="@string/intereses_0_0"
+        android:text="@string/interes"
         android:textColor="@android:color/holo_green_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
