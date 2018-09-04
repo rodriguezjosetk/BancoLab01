@@ -25,6 +25,7 @@ public class PlazoFijo {
             this.avisarVencimiento=false;
             this.renovarAutomaticamente=false;
             this.moneda = Moneda.PESO;
+            this.cliente = new Cliente();
         }
 
     //GETTERS & SETTERS

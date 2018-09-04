@@ -1,6 +1,8 @@
 package ar.edu.utn.frsf.isi.dam.bancolab01;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Gravity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -19,6 +22,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import modelo.Cliente;
+import modelo.Moneda;
 import modelo.PlazoFijo;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         rbPeso.setChecked(true);
 
 
+
         //LISTENER SOBRE EL CAMPO DE MONTO PARA QUE SE CONFIGURE EL MONTO EN LA INSTANCIA DE PLAZO FIJO CUANDO SE INGRESA O CAMBIA EL MONTO EN EL EDITTEXT
         txtMonto.addTextChangedListener(new TextWatcher() {
             @Override
@@ -99,8 +104,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //COMPORTAMIENTO DEL SEEKBAR
 
+
+        //COMPORTAMIENTO DEL SEEKBAR
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -124,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         //LISTENER SOBRE EL CHECHBOX DE TERMINOS Y CONDICIONES
         chxTerminos.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -146,6 +154,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         //LISTENER TOGGLE
         toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -154,11 +164,124 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+        //LISTENER CAMPO CUIT
+        txtCuit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() != 0){
+                    pf.getCliente().setCuil(s.toString());
+                }
+                else{
+                    pf.getCliente().setCuil("");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+        //LISTENER CORREO ELECTRONICO
+        txtCorreo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (s.length() != 0){
+                    pf.getCliente().setMail(s.toString());
+                }
+                else{
+                    pf.getCliente().setMail("");
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+
+
+        //LISTENER RADIOBUTTON DOLARES
+        rbDolar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    pf.setMoneda(Moneda.DOLAR);
+                }
+            }
+        });
+
+
+
+        //LISTENER RADIOBUTTON PESO
+        rbPeso.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    pf.setMoneda(Moneda.PESO);
+                }
+            }
+        });
+
+
+
+        //LISTENER SWITCH
+        swMailVencimiento.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    pf.setAvisarVencimiento(isChecked);
+                }
+            }
+        });
+
     }
 
 
+    public void onClick (View view){
 
-
-
-
+//        if(pf.getCliente().getMail().length() != 0){
+//            if(pf.getCliente().getCuil().length() != 0){
+//                if(pf.getMonto() > 0.0){
+//                    lblInformacionControl.setTextColor(getResources().getColor(R.color.colorAccent));
+//                    lblInformacionControl.setText(pf.toString());
+//                }
+//                else{
+//                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un monto válido", Toast.LENGTH_SHORT);
+//                    toast.setGravity(Gravity.CENTER, 0,0);
+//                    toast.show();
+//                    lblInformacionControl.setText("");
+//                }
+//            }
+//            else{
+//                Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un CUIT/CUIL", Toast.LENGTH_SHORT);
+//                toast.setGravity(Gravity.CENTER, 0,0);
+//                toast.show();
+//                lblInformacionControl.setText("");
+//            }
+//        }
+//        else{
+//            Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un correo electrónico", Toast.LENGTH_SHORT);
+//            toast.setGravity(Gravity.CENTER, 0,0);
+//            toast.show();
+//            lblInformacionControl.setText("");
+//        }
+    }
 }
