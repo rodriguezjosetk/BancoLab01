@@ -257,31 +257,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClick (View view){
 
-//        if(pf.getCliente().getMail().length() != 0){
-//            if(pf.getCliente().getCuil().length() != 0){
-//                if(pf.getMonto() > 0.0){
-//                    lblInformacionControl.setTextColor(getResources().getColor(R.color.colorAccent));
-//                    lblInformacionControl.setText(pf.toString());
-//                }
-//                else{
-//                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un monto válido", Toast.LENGTH_SHORT);
-//                    toast.setGravity(Gravity.CENTER, 0,0);
-//                    toast.show();
-//                    lblInformacionControl.setText("");
-//                }
-//            }
-//            else{
-//                Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un CUIT/CUIL", Toast.LENGTH_SHORT);
-//                toast.setGravity(Gravity.CENTER, 0,0);
-//                toast.show();
-//                lblInformacionControl.setText("");
-//            }
-//        }
-//        else{
-//            Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un correo electrónico", Toast.LENGTH_SHORT);
-//            toast.setGravity(Gravity.CENTER, 0,0);
-//            toast.show();
-//            lblInformacionControl.setText("");
-//        }
+        if(pf.getCliente().getMail().length() != 0){
+            if(pf.getCliente().getCuil().length() != 0){
+                if(pf.getMonto() > 0.0){
+                    lblInformacionControl.setTextColor(getResources().getColor(R.color.colorAccent));
+                    lblInformacionControl.setText(pf.toString());
+                }
+                else{
+                    Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un monto válido", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0,0);
+                    toast.show();
+                    lblInformacionControl.setText("");
+                }
+            }
+            else{
+                Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un CUIT/CUIL", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0,0);
+                toast.show();
+                lblInformacionControl.setText("");
+            }
+        }
+        else{
+            Toast toast = Toast.makeText(getApplicationContext(), "Ingrese un correo electrónico", Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER, 0,0);
+            toast.show();
+            lblInformacionControl.setText("");
+        }
     }
 }
