@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -7,7 +9,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:context=".MainActivity">
 
         <android.support.design.widget.TextInputLayout
@@ -109,7 +111,7 @@
         <SeekBar
             android:id="@+id/seekBarDias"
             android:layout_width="368dp"
-            android:layout_height="25dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
@@ -152,8 +154,8 @@
 
         <Switch
             android:id="@+id/switchVencimiento"
-            android:layout_width="368dp"
-            android:layout_height="26dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
@@ -165,14 +167,14 @@
 
         <ToggleButton
             android:id="@+id/toggleOption"
-            android:layout_width="368dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="@string/togglebutton"
-            android:textOn="@string/renovaci_n_autom_tica"
             android:textOff="@string/acreditar_en_cuenta"
+            android:textOn="@string/renovaci_n_autom_tica"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/switchVencimiento" />
@@ -189,21 +191,21 @@
 
         <Button
             android:id="@+id/btnHacerPlazoFijo"
-            android:layout_width="368dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="@string/hacer_plazo_fijo"
             android:onClick="onClick"
+            android:text="@string/hacer_plazo_fijo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/chxTerminosyCondiciones" />
 
         <TextView
             android:id="@+id/lblInformacionControl"
-            android:layout_width="368dp"
-            android:layout_height="47dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
