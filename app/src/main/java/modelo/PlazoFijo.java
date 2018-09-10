@@ -109,7 +109,7 @@ public class PlazoFijo {
 //            System.out.println(monto);
 
 
-
+            //podrias haber puesto un switch forro jajajaa -santo
             if(dias < 30 && monto <= 5000) return Double.valueOf(tasas[0]);
             if(dias >= 30 && monto <= 5000) return Double.valueOf(tasas[1]);
             if(dias < 30 && monto > 5000 && monto <= 99999) return Double.valueOf(tasas[2]);
