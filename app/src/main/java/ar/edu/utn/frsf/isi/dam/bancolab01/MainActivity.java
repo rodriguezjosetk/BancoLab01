@@ -69,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
         lblDiasDePlazo = (TextView) findViewById((R.id.lblDiasDePlazo));
         lblIntereses = (TextView) findViewById(R.id.lblIntereses);
 
+        //inicializaciones en cero para que no crashee en la primera corrida
+        txtCorreo.setText("");
+        txtCuit.setText("");
+        txtMonto.setText(0);
 
         pf = new PlazoFijo(getResources().getStringArray(R.array.tasas)); //SETEO DE LA INSTANCIA DE PLAZO FIJO
         btnHacerPlazoFijo.setEnabled(false);
